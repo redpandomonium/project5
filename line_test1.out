@@ -1,0 +1,41 @@
+LINE Is Not an Editor -- it is a linear visualization of a TextBuffer.
+The '<' character mimics a call to backward()
+The '>' character mimics a call to forward()
+The '#' character mimics a call to remove()
+The '^' character mimics a call to up()
+The '!' character mimics a call to down()
+The '[' character mimics a call to move_to_row_start()
+The ']' character mimics a call to move_to_row_end()
+The '@' character mimics a call to insert() with a newline
+All other characters just mimic insert() with that character
+
+Give initial input (empty line quits):
+STARTING
+start : |	:(1,0 )
+add   : s|	:(1,1 )
+add   : st|	:(1,2 )
+add   : ste|	:(1,3 )
+add   : stea|	:(1,4 )
+add   : stead|	:(1,5 )
+add   : steady|	:(1,6 )
+up    : steady|	:(1,6 )
+left  : |ÿsteady	:(1,5 )
+left  : |ÿÿsteady	:(1,4 )
+left  : |ÿÿÿsteady	:(1,3 )
+left  : |üÿÿÿsteady	:(1,2 )
+up    : |üÿÿÿsteady	:(1,2 )
+right : |ÿÿÿsteady	:(1,3 )
+right : |ÿÿsteady	:(1,4 )
+up    : |ÿÿsteady	:(1,4 )
+right : |ÿsteady	:(1,5 )
+right : steady|	:(1,6 )
+up    : steady|	:(1,6 )
+enter : steady\n|	:(2,0 )
+left  : |ÿsteady\n	:(1,6 )
+left  : |ÿÿsteady\n	:(1,5 )
+enter : |ÿÿstead\ny\n	:(2,0 )
+up    : |øÿÿÿøÿÿÿstead\ny\n	:(1,0 )
+up    : |øÿÿÿøÿÿÿstead\ny\n	:(1,0 )
+
+Done. More input? (empty line quits):
+Goodbye.
